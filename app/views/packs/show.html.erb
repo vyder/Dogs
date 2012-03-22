@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dog:</b>
+  <%= @pack.dog_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @pack.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_pack_path(@pack) %> |
+<%= link_to 'Back', packs_path %>
