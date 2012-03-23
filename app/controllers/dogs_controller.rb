@@ -2,7 +2,7 @@ class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
   def index
-    @dogs = Dog.all
+    @dogs = Dog.order("position")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,4 +80,13 @@ class DogsController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def sort
+    params[:dog].each_with_index do |id, index|
+        Dog.update_all({position: index+1}, {id: id})
+        puts "in here..."
+      end
+      render nothing: true
+  end
+  
 end

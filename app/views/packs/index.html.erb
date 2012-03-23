@@ -2,6 +2,21 @@
 
 <h1>Listing packs</h1>
 
+
+	<ul id = "packs" data-update-url="<%= sort_packs_url %>">
+		<% @packs.each do |dog| %>
+			<%= content_tag_for :li, dog do %>
+				<%= dog.name %>
+			<% end %>	
+		<% end %>
+	</ul>
+<br />
+<%= link_to 'New Pack', new_pack_path %>
+
+
+
+<h1>Listing packs</h1>
+
 <table>
   <tr>
     <th>Name</th>

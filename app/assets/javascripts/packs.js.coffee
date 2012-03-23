@@ -6,6 +6,5 @@ jQuery ->
 	$('#packs').sortable(
   	axis: 'y'
   	update: ->
-		  alert("#packs".all)
-    	# $.post($(this).data('update-url'), $(this).sortable('serialize'))
+    	$.post($(this).data('update-url'), $(this).sortable('serialize'))
 		);

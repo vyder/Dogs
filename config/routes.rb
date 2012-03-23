@@ -58,6 +58,10 @@ Dogs::Application.routes.draw do
   resources :packs do 
     collection { post :sort}
   end
+  
+  resources :dogs do 
+    collection { post :sort}
+  end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
