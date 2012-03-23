@@ -82,10 +82,10 @@ class PacksController < ApplicationController
   end
   
   def sort
-      params[:pack].each_with_index do |id, index|
-        Pack.update_all({position: index+1}, {id: id})
-      end
-      render nothing: true
+      # params[:pack].each_with_index do |id, index|
+      #    Pack.update_all({position: index+1}, {id: id})
+      #  end
+      #  render nothing: true
     end
   
 end

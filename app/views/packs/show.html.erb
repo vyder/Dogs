@@ -18,23 +18,23 @@
 		  </tr>
 		
 		<% @pack.dogs.each do |dog| %>
-		  <tr id = "dog_<%= dog.id %>">
+		 	<%= content_tag_for :tr, dog do %>
 		    <td><%= dog.name %></td>
 		    <td><%= dog.breed %></td>
 		    <td><%= dog.color %></td>
 		    <td><%= link_to 'Show', dog %></td>
 		    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
 		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>		
-		  </li>
+		  <% end %>
 		<% end %>
 		</table>
 		
-		<ul id = "packs" data-update-url="<%= sort_dogs_url %>" data-update-url="<%= sort_packs_url %>">
+		<ul id = "packs" data-update-url="<%= sort_dogs_url %>">
 			<% @pack.dogs.each do |dog| %>
 				<%= content_tag_for :li, dog do %>
 					<%= link_to h(dog.name), dog %>
-					<%= link_to h(dog.position), dog %>
-					<%= link_to h(dog.id), dog %>
+					<%= dog.breed %>
+					<%= dog.color %>
 				<% end %>	
 			<% end %>
 		</ul>

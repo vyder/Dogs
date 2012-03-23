@@ -55,10 +55,10 @@ Dogs::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'packs#index'
   
-  resources :packs do 
-    collection { post :sort}
-  end
-  
+  # resources :packs do 
+  #   collection { post :sort}
+  # end
+  # 
   resources :dogs do 
     collection { post :sort}
   end
