@@ -1,15 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Dog:</b>
-  <%= @pack.dog_id %>
-</p>
-
-<p>
   <b>Name:</b>
   <%= @pack.name %>
 </p>
 
+<p>
+  <b>Dogs:</b>
+		<table>
+		  <tr>
+		    <th>Name</th>
+		    <th>Breed</th>
+		    <th>Color</th>
+		    <th></th>
+		    <th></th>
+		    <th></th>
+		  </tr>
+
+		<% @pack.dogs.each do |dog| %>
+		  <tr>
+		    <td><%= dog.name %></td>
+		    <td><%= dog.breed %></td>
+		    <td><%= dog.color %></td>
+		    <td><%= link_to 'Show', dog %></td>
+		    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>
+		  </tr>
+		<% end %>
+		</table>
+</p>
 
 <%= link_to 'Edit', edit_pack_path(@pack) %> |
 <%= link_to 'Back', packs_path %>

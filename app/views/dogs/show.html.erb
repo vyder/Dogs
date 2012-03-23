@@ -15,6 +15,11 @@
   <%= @dog.color %>
 </p>
 
+<p>
+	<b>Pack:</b>
+	<%= @dog.pack.name %>
+</p>
+
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
 <%= link_to 'Back', dogs_path %>
