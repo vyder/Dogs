@@ -7,7 +7,7 @@
 
 <p>
   <b>Dogs:</b>
-		<table id = "packs">
+		<table id = "pac">
 		  <tr>
 		    <th>Name</th>
 		    <th>Breed</th>
@@ -28,6 +28,14 @@
 		  </li>
 		<% end %>
 		</table>
+		
+		<ul id = "packs">
+			<% @pack.each do |dog| %>
+				<%= content_tag_for :li, dog do %>
+					<%#= link_to h(dog.name), dog %>
+				<% end %>	
+			<% end %>
+		</ul>
 		
 </p>
 

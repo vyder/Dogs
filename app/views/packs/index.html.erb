@@ -18,6 +18,13 @@
 <% end %>
 </table>
 
+	<ul id = "packs">
+		<% @packs.each do |dog| %>
+			<%= content_tag_for :li, dog do %>
+				<%= link_to h(dog.name), dog %>
+			<% end %>	
+		<% end %>
+	</ul>
 <br />
 
 <%= link_to 'New Pack', new_pack_path %>
