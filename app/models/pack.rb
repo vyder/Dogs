@@ -1,4 +1,5 @@
 class Pack < ActiveRecord::Base
+  acts_as_list
   attr_accessible :name
 
   # Relationships

@@ -2,7 +2,7 @@ Dogs::Application.routes.draw do
   resources :packs
 
   resources :dogs
-
+  # resources :packs, :collection => { :sort => :post }
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
