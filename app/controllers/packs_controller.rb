@@ -2,7 +2,7 @@ class PacksController < ApplicationController
   # GET /packs
   # GET /packs.json
   def index
-    @packs = Pack.all
+    @packs = Pack.order("position")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,6 +79,15 @@ class PacksController < ApplicationController
       format.html { redirect_to packs_url }
       format.json { head :ok }
     end
+  end
+  
+  def sort
+    # params[:pack].each_with_index do |id, index|
+    @pack = Pack.find(params[:id])
+    # @pack.each_with_index do |id, index|
+    #     Pack.dogs.update_all({:position => index+1}, {:id => id})
+    #   end
+    #   render nothing: true
   end
   
 end

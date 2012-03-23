@@ -7,7 +7,7 @@
 
 <p>
   <b>Dogs:</b>
-		<table id = "pac">
+		<ul id = "packs" data-update-url="<%= sort_packs_url %>"> 
 		  <tr>
 		    <th>Name</th>
 		    <th>Breed</th>
@@ -16,32 +16,21 @@
 		    <th></th>
 		    <th></th>
 		  </tr>
-
-		<% @pack.dogs.each do |dog| %>
-		  <tr id = "dog_<%= dog.id %>">
-		    <td><%= dog.name %></td>
-		    <td><%= dog.breed %></td>
-		    <td><%= dog.color %></td>
-		    <td><%= link_to 'Show', dog %></td>
-		    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>		
-		  </li>
-		<% end %>
-		</table>
 		
-		<ul id = "packs">
-			<% @pack.dogs.each do |dog| %>
-				<%= content_tag_for :li, dog do %>
-					<%= link_to h(dog.name), dog %>
-				<% end %>	
-			<% end %>
+		<% @pack.dogs.each do |dog| %>
+		 <%= content_tag_for :li, dog do %>
+		<%= dog.name %>
+		 <%= dog.breed %>
+		 <%= dog.color %>
+		  <%= link_to 'Show', dog %>
+		  <%= link_to 'Edit', edit_dog_path(dog) %>
+		 <%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %>		
+		  <%end%>
+		<% end %>
 		</ul>
-		<script>
-			$(function() {
-				$( "#packs").sortable();
-				$( "#packs" ).disableSelection();
-			});
-			</script>
+		
+
+	 
 </p>
 
 <%= link_to 'Edit', edit_pack_path(@pack) %> |
