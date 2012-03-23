@@ -83,7 +83,7 @@ class PacksController < ApplicationController
   
   def sort
     params[:pack].each_with_index do |id, index|
-      @pack.dogs.update_all(['position=?', index+1], ['id=?', id])
+      @pack.dogs.update_all({position: index+1}, {id: id})
     end
     render :nothing => true
   end

@@ -16,15 +16,19 @@
 		    <th></th>
 		    <th></th>
 		  </tr>
+
+		<% @pack.dogs.each do |dog| %>
+		  <tr id = "dog_<%= dog.id %>">
+		    <td><%= dog.name %></td>
+		    <td><%= dog.breed %></td>
+		    <td><%= dog.color %></td>
+		    <td><%= link_to 'Show', dog %></td>
+		    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
+		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>		
+		  </li>
+		<% end %>
 		</table>
-	<div id = "items">
-		<ul id = "sortable_list">
-			<% @pack.dogs.each do |dog|%>
-				<li id = "dog_<%= dog.id%>"><%= dog.name %></li>
-			<% end %>
-		</ul>
-	</div>
-	<%= sortable_element('sortable_list', :update => 'items', :url => {:action => :update_positions}) %>
+		
 </p>
 
 <%= link_to 'Edit', edit_pack_path(@pack) %> |
