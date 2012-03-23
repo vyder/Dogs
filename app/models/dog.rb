@@ -22,6 +22,8 @@ class Dog < ActiveRecord::Base
   
   # Other methods
   # -----------------------------
-
+  def has_pack?
+    !self.pack.nil?
+  end
   
 end
