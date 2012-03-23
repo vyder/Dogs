@@ -4,7 +4,7 @@ class Pack < ActiveRecord::Base
 
   # Relationships
   # -----------------------------
-  has_many :dogs
+  has_many :dogs, :order => "dogs.position"
 
 
   # Validations
@@ -18,7 +18,7 @@ class Pack < ActiveRecord::Base
 
   # Scopes
   # -----------------------------
-  
+  scope :all_dogs, lambda { |id| where("dogs_id = ?", id) }
 
   
   # Other methods

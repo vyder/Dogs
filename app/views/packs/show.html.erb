@@ -29,10 +29,12 @@
 		<% end %>
 		</table>
 		
-		<ul id = "packs" data-update-url="<%= sort_dogs_url %>">
+		<ul id = "packs" data-update-url="<%= sort_dogs_url %>" data-update-url="<%= sort_packs_url %>">
 			<% @pack.dogs.each do |dog| %>
 				<%= content_tag_for :li, dog do %>
 					<%= link_to h(dog.name), dog %>
+					<%= link_to h(dog.position), dog %>
+					<%= link_to h(dog.id), dog %>
 				<% end %>	
 			<% end %>
 		</ul>
