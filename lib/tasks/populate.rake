@@ -41,6 +41,7 @@ namespace :db do
 
         # Add dog to this pack
         dog.pack_id = pack.id
+        dog.position = i 
         dog.save!
         
       end

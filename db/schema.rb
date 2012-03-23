@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120323000342) do
+ActiveRecord::Schema.define(:version => 20120323002218) do
 
   create_table "dogs", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20120323000342) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "pack_id"
+    t.integer  "position"
   end
 
   create_table "packs", :force => true do |t|
