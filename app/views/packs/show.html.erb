@@ -29,10 +29,10 @@
 		<% end %>
 		</table>
 		
-		<ul id = "packs">
-			<% @pack.each do |dog| %>
+		<ul id = "pac">
+			<% @pack.dogs.each do |dog| %>
 				<%= content_tag_for :li, dog do %>
-					<%#= link_to h(dog.name), dog %>
+					<%= link_to h(dog.name), dog %>
 				<% end %>	
 			<% end %>
 		</ul>

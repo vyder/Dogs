@@ -1,22 +1,5 @@
 <h1>Listing packs</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @packs.each do |pack| %>
-  <tr>
-    <td><%= pack.name %></td>
-    <td><%= link_to 'Show', pack %></td>
-    <td><%= link_to 'Edit', edit_pack_path(pack) %></td>
-    <td><%= link_to 'Destroy', pack, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
 
 	<ul id = "packs">
 		<% @packs.each do |dog| %>
