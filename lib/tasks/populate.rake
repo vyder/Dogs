@@ -31,17 +31,16 @@ namespace :db do
       pack.name = "Pack #{i}"
       pack.save!
       
-      dog = Dog.all.sample
-      10.times do
-        
+      10.times do |position|
+
         # Find a dog without a pack
-        while dog.has_pack?
+        begin
           dog = Dog.all.sample
-        end
+        end while dog.has_pack?
 
         # Add dog to this pack
         dog.pack_id = pack.id
-        dog.position = i 
+        dog.position = position + 1 # So that the first dog doesn't have a position of zero
         dog.save!
         
       end
