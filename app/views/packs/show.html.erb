@@ -29,14 +29,19 @@
 		<% end %>
 		</table>
 		
-		<ul id = "pac">
+		<ul id = "packs">
 			<% @pack.dogs.each do |dog| %>
 				<%= content_tag_for :li, dog do %>
 					<%= link_to h(dog.name), dog %>
 				<% end %>	
 			<% end %>
 		</ul>
-		
+		<script>
+			$(function() {
+				$( "#packs").sortable();
+				$( "#packs" ).disableSelection();
+			});
+			</script>
 </p>
 
 <%= link_to 'Edit', edit_pack_path(@pack) %> |

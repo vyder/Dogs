@@ -1,13 +1,25 @@
+
+
 <h1>Listing packs</h1>
 
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
-	<ul id = "packs">
-		<% @packs.each do |dog| %>
-			<%= content_tag_for :li, dog do %>
-				<%= link_to h(dog.name), dog %>
-			<% end %>	
-		<% end %>
-	</ul>
+<% @packs.each do |pack| %>
+  <tr>
+    <td><%= pack.name %></td>
+    <td><%= link_to 'Show', pack %></td>
+    <td><%= link_to 'Edit', edit_pack_path(pack) %></td>
+    <td><%= link_to 'Destroy', pack, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
 <br />
 
 <%= link_to 'New Pack', new_pack_path %>
