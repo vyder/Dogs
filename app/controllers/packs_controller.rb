@@ -83,30 +83,9 @@ class PacksController < ApplicationController
   
   def sort
       params[:pack].each_with_index do |id, index|
-        Pack.update_all({position: index+1}, {id: id}, {:id => Pack.dogs})
+        Pack.update_all({position: index+1}, {id: id})
       end
       render nothing: true
     end
- 
- 
- #  works for pack by itself
-  #   params[:pack].each_with_index do |id, index|
-  #     Pack.update_all({position: index+1}, {id: id})
-  #     puts "in here..."
-  #   end
-  #   render nothing: true
-  # end
-    
-    
-    
-    # @pack = Pack.find(params[:id])
-    #    @pack.each_with_index do |id, index|
-    #      @pack.update_all({:position => index+1}, {:id => id})
-    #    end
-    # params[:pack].each_with_index do |id, index|
-    # # @pack = Pack.find(params[:id])
-    #     Pack.update_all({:position => index+1}, {:id => id})
-    #   end
-    #   render nothing: true
   
 end
