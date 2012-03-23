@@ -7,7 +7,7 @@
 
 <p>
   <b>Dogs:</b>
-		<table>
+		<table id = "packs">
 		  <tr>
 		    <th>Name</th>
 		    <th>Breed</th>
@@ -18,16 +18,17 @@
 		  </tr>
 
 		<% @pack.dogs.each do |dog| %>
-		  <tr>
+		  <tr id = "dog_<%= dog.id %>">
 		    <td><%= dog.name %></td>
 		    <td><%= dog.breed %></td>
 		    <td><%= dog.color %></td>
 		    <td><%= link_to 'Show', dog %></td>
 		    <td><%= link_to 'Edit', edit_dog_path(dog) %></td>
-		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>
+		    <td><%= link_to 'Destroy', dog, confirm: 'Are you sure?', method: :delete %></td>		
 		  </tr>
 		<% end %>
 		</table>
+		<%= sortable_element("packs", :url => "TODO") %>
 </p>
 
 <%= link_to 'Edit', edit_pack_path(@pack) %> |
