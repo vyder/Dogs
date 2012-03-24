@@ -84,18 +84,12 @@ class DogsController < ApplicationController
   end
   
   def sort
-    params[:dog].each_with_index do |id, index|
-        Dog.update_all({position: index+1}, {id: id})
+    params[:dog].each_with_index do |id, index, name|
+        Dog.update_all({position: index+1}, {id: id}, {name: name})
       end
       render nothing: true
       # render :template => "/packs/show.html.erb"
   end
- 
-   #  
-   # def sort
-   #   params[:dog].each_with_index do |id, index|
-   #       Dog.update_all({position: index+1}, {id: id})
-   #     end
-   # end
+
   
 end

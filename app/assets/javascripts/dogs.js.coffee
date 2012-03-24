@@ -10,9 +10,6 @@ jQuery ->
       $.post($(this).data('update-url'), $(this).sortable('serialize'), location.reload())
   )
 					
-
-jQuery ->
   $('#packs').sortable({containment: 'parent'})
-
-jQuery ->
-  $("#packs").sortable({ appendTo: 'body' });
+  $("#packs").sortable({ appendTo: 'body' }); 
+  $("#packs").sortable({ opacity: 0.6 });

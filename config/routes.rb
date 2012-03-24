@@ -2,6 +2,10 @@ Dogs::Application.routes.draw do
   resources :packs
 
   resources :dogs
+  
+  resources :dogs do 
+    collection { post :sort}
+  end
   # resources :packs, :collection => { :sort => :post }
   
   # The priority is based upon order of creation:
@@ -59,9 +63,7 @@ Dogs::Application.routes.draw do
   #   collection { post :sort}
   # end
   # 
-  resources :dogs do 
-    collection { post :sort}
-  end
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
