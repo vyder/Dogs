@@ -84,9 +84,10 @@ class DogsController < ApplicationController
   def sort
     params[:dog].each_with_index do |id, index|
         Dog.update_all({position: index+1}, {id: id})
+        
       # have to use a scope
       end
-      render nothing: true
+   
   end
   
 end

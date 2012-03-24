@@ -3,7 +3,8 @@
 <h1>Listing packs</h1>
 
 
-	<ul id = "packs" data-update-url="<%= sort_packs_url %>">
+	<!-- <ul id = "packs" data-update-url="<%#= sort_packs_url %>"> -->
+		<ul>
 		<% @packs.each do |dog| %>
 			<%= content_tag_for :li, dog do %>
 				<%= dog.name %>
