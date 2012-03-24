@@ -17,7 +17,7 @@ class PacksController < ApplicationController
     @packs = Pack.order("dogs.position")
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @packs }
+      format.json { render json: @pack }
     end
   end
 

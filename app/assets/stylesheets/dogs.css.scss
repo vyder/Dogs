@@ -1,3 +1,8 @@
 // Place all the styles related to the Dogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#packs .handle { font-size: 8px; color: #777; cursor: move; }
+#packs li {
+padding-bottom:2em;
+}

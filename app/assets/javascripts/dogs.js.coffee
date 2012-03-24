@@ -3,9 +3,16 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-	$('#packs').sortable(
-  	axis: 'y'
-  	update: ->
-    	$.post($(this).data('update-url'), $(this).sortable('serialize'))
-		);
-	
+  $('#packs').sortable( 
+    axis: 'y'
+    handle: '.handle'
+    update: ->
+      $.post($(this).data('update-url'), $(this).sortable('serialize'), location.reload())
+  )
+					
+
+jQuery ->
+  $('#packs').sortable({containment: 'parent'})
+
+jQuery ->
+  $("#packs").sortable({ appendTo: 'body' });

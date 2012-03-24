@@ -1,13 +1,7 @@
 class DogsController < ApplicationController
   # GET /dogs
   # GET /dogs.json
-  include AbstractController::Rendering
-    # I didn't need layouts, translation or assetpaths, YMMV
-    include AbstractController::Helpers
-    include Rails.application.routes.url_helpers
-    # helper MyHelper # the partial references some helpers in here
-    
-    # self.view_paths = Rails.application.config.paths["app/views"]
+
   
   def index
     @dogs = Dog.order("position")
@@ -90,11 +84,10 @@ class DogsController < ApplicationController
   end
   
   def sort
-    
     params[:dog].each_with_index do |id, index|
         Dog.update_all({position: index+1}, {id: id})
       end
-      # render nothing: true
+      render nothing: true
       # render :template => "/packs/show.html.erb"
   end
  
