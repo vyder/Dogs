@@ -34,7 +34,7 @@
 				<%= content_tag_for :li, dog do  %>
 				 <span class="handle">[draggable]</span>
 					<%= link_to h(dog.name), dog %> &nbsp;&nbsp;&nbsp;&nbsp;
-					<%= dog.position %>
+					<span class ="position"><%= dog.position %></span>
 				<% end %>	
 			<% end %>
 		</ul>

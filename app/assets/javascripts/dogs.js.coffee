@@ -7,7 +7,7 @@ jQuery ->
     axis: 'y'
     handle: '.handle'
     update: ->
-      $.post($(this).data('update-url'), $(this).sortable('serialize'), location.reload())
+      $.post($(this).data('update-url'), $(this).sortable('serialize'), location.reload()); 
   )
 					
   $('#packs').sortable({containment: 'parent'})

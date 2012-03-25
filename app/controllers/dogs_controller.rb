@@ -90,6 +90,5 @@ class DogsController < ApplicationController
       render nothing: true
       # render :template => "/packs/show.html.erb"
   end
-
   
 end
