@@ -12,4 +12,4 @@ jQuery ->
 					
   $('#packs').sortable({containment: 'parent'})
   $("#packs").sortable({ opacity: 0.6 });
-  
+  $("#packs").sortable("refresh");
