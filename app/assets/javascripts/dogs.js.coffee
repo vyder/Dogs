@@ -11,5 +11,5 @@ jQuery ->
   )
 					
   $('#packs').sortable({containment: 'parent'})
-  $("#packs").sortable({ appendTo: 'body' }); 
   $("#packs").sortable({ opacity: 0.6 });
+  
